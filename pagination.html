@@ -1,0 +1,18 @@
+<ul ng-show="datalength>0" class="pagination">
+   
+            <li  ng-class="{disabled:curPage == 0}">
+                <a ng-class="{stop:curPage == 0}" ng-click="curPage = 1">First</a>
+            </li>
+            <li ng-class="{disabled:curPage == 0}">
+                <a ng-class="{stop:curPage == 0}" ng-click="curPage=curPage-1">Previous</a>
+            </li>
+             <li>
+                <span>Page {{curPage + 1}} of {{ totalPages }}</span>
+            </li>
+            <li ng-class="{disabled:(curPage >= (datalength/pageSize) - 1)}">
+                <a ng-class="{stop:curPage == totalPages-1}" ng-click="curPage=curPage+1">Next</a>
+            </li>
+            <li ng-class="{disabled:(curPage >= (datalength/pageSize) - 1)}">
+                <a ng-click="curPage = totalPages-1">Last</a>
+            </li>
+        </ul>
